@@ -8,6 +8,11 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * 网络工具类
+ * 
+ * @author chenbd 2018年8月17日
+ */
 public class NetworkUtils {
 	
 	 /**

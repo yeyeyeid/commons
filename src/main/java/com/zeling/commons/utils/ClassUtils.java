@@ -13,9 +13,20 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+/**
+ * class工具类
+ * 
+ * @author chenbd 2018年8月17日
+ */
 public class ClassUtils {
+	
+	public static final Logger LOG = LoggerFactory.getLogger(ClassUtils.class);
+	
 	/**
-     * 获取父类的真实参数化类型，在本类中泛型会被擦除
+     * 获取父类的真实参数化类型，在具体类中泛型会被擦除
      *
      * @param clazz
      * @return 参数化类型
@@ -111,7 +122,7 @@ public class ClassUtils {
         }
 
         for (Field f : fromSet) {
-        	// 静态熟悉不用复制
+        	// 静态属性不用复制
             if (Modifier.isStatic(f.getModifiers())) {
                 continue;
             }
@@ -127,25 +138,6 @@ public class ClassUtils {
             toField.set(to, f.get(from));
         }
 
-    }
-
-    /**
-     * 获取一个类的field
-     * 
-     * @param field
-     * @param clazz
-     * @return field信息
-     */
-    public static Field getFieldFromClass(String field, Class<? extends Object> clazz) {
-        try {
-            return clazz.getDeclaredField(field);
-        } catch (Exception e) {
-            try {
-                return clazz.getField(field);
-            } catch (Exception ex) {
-            }
-        }
-        return null;
     }
 
 	/**
