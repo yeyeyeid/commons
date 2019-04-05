@@ -8,9 +8,9 @@ import org.slf4j.LoggerFactory;
  * 
  * @author chenbd 2018年10月30日
  */
-public class HttpUtils {
+public class HttpClientUtils {
 	
-	public static final Logger LOG = LoggerFactory.getLogger(HttpUtils.class);
+	public static final Logger LOG = LoggerFactory.getLogger(HttpClientUtils.class);
 
 	/**
 	 * 测试
@@ -21,7 +21,7 @@ public class HttpUtils {
 		// TODO Auto-generated method stub
 	}
 
-	private HttpUtils() {
-		throw new AssertionError(HttpUtils.class.getName() + ": 禁止实例化");
+	private HttpClientUtils() {
+		throw new AssertionError(HttpClientUtils.class.getName() + ": 禁止实例化");
 	}
 }
